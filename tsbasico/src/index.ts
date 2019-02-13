@@ -1,1 +1,4 @@
-console.log("Hello World!");
+import {Perguntas} from './questions';
+
+new Perguntas().pizzaDelivery();
+
