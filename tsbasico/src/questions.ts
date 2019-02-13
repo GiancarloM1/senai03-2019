@@ -1,8 +1,16 @@
 import {prompt} from 'inquirer';
+import { VpHttp } from './http/vphttp';
 
 export class Perguntas {
     private dadosDoPedido : any;
     private dadosDaEntrega : any;
+    private dataPizza : any[] = [];
+    
+    public question(){
+        this.getSabores();
+        this.pizzaDelivery();
+    }
+
     public pizzaDelivery(){
         prompt(
             [
@@ -26,7 +34,7 @@ export class Perguntas {
                 name: 'flavor',
                 type: 'list',
                 message: 'Escolha um sabor:',
-                choices: ['Calabresa','Frango com Bacon','Peperroni','Banana Nevada','Café com Leite']
+                choices: this.dataPizza
             },
             {
                 name: 'qt',
@@ -96,5 +104,24 @@ export class Perguntas {
             '\n'+this.dadosDaEntrega.complement)
         }
     }
+    private getSabores(){
+        let http = new VpHttp('http://5c64a0dfc969210014a32ee0.mockapi.io/sabor');
+
+        http.get().subscribe(
+            (data : any) => {
+                data.forEach((element:any) => {
+                    if(element.Disponivel == true){
+                        this.dataPizza.push(element.Sabor);
+                    }
+                    
+                });
+                
+            },
+            (error : any) => {
+                console.log(error); 
+            }
+        )
+    }   
+    
 }   
 

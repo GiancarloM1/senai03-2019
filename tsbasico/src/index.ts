@@ -1,4 +1,4 @@
 import {Perguntas} from './questions';
 
-new Perguntas().pizzaDelivery();
+new Perguntas().question();
 
