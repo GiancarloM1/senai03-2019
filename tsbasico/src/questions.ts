@@ -9,6 +9,7 @@ export class Perguntas {
     public question(){
         this.getSabores();
         this.pizzaDelivery();
+        this.getTamanho();
     }
 
     public pizzaDelivery(){
@@ -120,8 +121,16 @@ export class Perguntas {
             (error : any) => {
                 console.log(error); 
             }
+        );
+
+    } 
+    private getTamanho(){
+        let http = new VpHttp('http://5c64a0dfc969210014a32ee0.mockapi.io/tamanho');
+
+        http.get().subscribe(
+
         )
-    }   
+    }  
     
 }   
 
