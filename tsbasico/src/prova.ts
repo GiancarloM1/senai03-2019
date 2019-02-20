@@ -40,7 +40,7 @@ export class prova {
                 this.dadosProduto = element.jogos;
                 this.estoque = element.saldo;
                 
-                console.log('\nProduto nesta categoria:' + this.dadosProduto + '||||' + this.estoque);
+                console.log('\nProduto nesta categoria:' + this.dadosProduto +' '+ '||||'+ ' ' + this.estoque +' '+ 'Unidades em estoque');
 
             }
 
