@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button primary (click)="adicionarAlunos()">Carregar Alunos</button>
+  <button ion-button primary (click)="buttonClick()">Esconder</button>
+  <button ion-button primary (click)="limparAlunos()">Limpar Alunos</button>
+  <button ion-button primary (click)="showMessage()">Mostrar Mensagem</button>
+  <button ion-button primary (click)="presentToast()">TOAST!</button>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Senha</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <button ion-button primary (click)="presentToast()">Logar!</button>
+  </ion-list>
+
+  <!--<div *ngIf="exibirConteudo">
+    <ion-list>
+      <ion-item *ngFor="let aluno of listaAlunos">
+        {{aluno.nome}}
+      </ion-item>
+    </ion-list>    
+  </div>-->
+  <div *ngIf="exibirConteudo">
+  <ion-list>
+      <ion-item>
+        <ion-label>Alunos</ion-label>
+        <ion-select [(ngModel)]="Alunos">
+          <ion-option  *ngFor="let aluno of listaAlunos">{{aluno.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
