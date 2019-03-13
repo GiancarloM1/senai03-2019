@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 import {Messages} from '../../providers/messages';
-import { Toast } from '../../providers/toast';
+import { Toasted } from '../../providers/toast';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +12,7 @@ export class HomePage {
   public listaAlunos = [];
   public exibirConteudo : boolean = true;
 
-  constructor(public navCtrl: NavController, private messages : Messages, private toast : Toast) {
+  constructor(public navCtrl: NavController, private messages : Messages, private toast : Toasted) {
 
   }
   public presentToast(){

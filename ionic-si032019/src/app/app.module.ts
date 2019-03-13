@@ -4,18 +4,20 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+//import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Messages } from '../providers/messages';
-import { Toast } from '../providers/toast';
+import { Toasted } from '../providers/toast';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    LoginPage,
+    HomePage
+    //ListPage
   ],
   imports: [
     BrowserModule,
@@ -24,14 +26,15 @@ import { Toast } from '../providers/toast';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    LoginPage,
+    HomePage
+    //ListPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Messages,
-    Toast,
+    Toasted,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

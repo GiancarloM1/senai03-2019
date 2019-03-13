@@ -3,13 +3,13 @@ import { ToastController } from 'ionic-angular';
 
 
 @Injectable()
-export class Toast {
+export class Toasted {
 
     constructor(public toastCtrl: ToastController) { }
   
     presentToast() {
       let toast = this.toastCtrl.create({
-        message: 'Hummm Toast',
+        message: 'SÓ QUE NÃO',
         duration: 3000,
         position: 'middle'
       });
