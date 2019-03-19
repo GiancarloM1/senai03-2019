@@ -29,17 +29,18 @@ export class LoginPage {
   }
 
   logIn(){
-    this.login.singIn()  
+    this.login.singIn(this.username, this.pass).subscribe(
+      (data : any) => {
+        this.navCtrl.setRoot(HomePage)
+      },
+      (error : any) => {
+        this.toast.presentToast()
 
-
-
-    if (this.username === "Gian" && this.pass === "gian123"){
-      this.navCtrl.setRoot(HomePage);
+      }
+    )
+    };
+ 
     }
-    else{
-      this.toast.presentToast();
-    }
 
-  }
 
-}
+

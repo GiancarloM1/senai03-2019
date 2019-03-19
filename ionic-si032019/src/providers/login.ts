@@ -18,7 +18,8 @@ export class LoginProvider {
       userName : userName,
       password : password,
     };
-    this.httpProvider.post(obj)
+    return this.httpProvider.post(obj)
+    
     
   }
 }

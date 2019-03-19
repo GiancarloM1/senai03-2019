@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule} from '@angular/http';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
@@ -24,6 +25,7 @@ import { HttpProvider } from '../providers/http';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [
@@ -42,7 +44,7 @@ import { HttpProvider } from '../providers/http';
     Toasted,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
-    HttpProvider
+    HttpProvider,
   ]
 })
 export class AppModule {}
