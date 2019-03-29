@@ -15,13 +15,21 @@ import { Messages } from '../providers/messages';
 import { Toasted } from '../providers/toast';
 import { LoginProvider } from '../providers/login';
 import { HttpProvider } from '../providers/http';
+import { TamanhosProvider } from '../providers/tamanhos';
+import { LogadoPage } from '../pages/logado/logado';
+import { SaboresProvider } from '../providers/sabores';
+import { DadosEntregaPage } from '../pages/dados-entrega/dados-entrega';
+import { CidadesProvider } from '../providers/cidades';
+import { BairrosProvider } from '../providers/bairros';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
     HomePage,
-    ListPage
+    ListPage,
+    LogadoPage,
+    DadosEntregaPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,9 @@ import { HttpProvider } from '../providers/http';
     MyApp,
     LoginPage,
     HomePage,
-    ListPage
+    ListPage,
+    LogadoPage,
+    DadosEntregaPage
   ],
   providers: [
     StatusBar,
@@ -45,6 +55,10 @@ import { HttpProvider } from '../providers/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     HttpProvider,
+    TamanhosProvider,
+    SaboresProvider,
+    CidadesProvider,
+    BairrosProvider,
   ]
 })
 export class AppModule {}

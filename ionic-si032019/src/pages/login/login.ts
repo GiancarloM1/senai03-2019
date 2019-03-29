@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Toasted } from '../../providers/toast';
-import { HomePage } from '../home/home';
 import { LoginProvider } from '../../providers/login';
+import { LogadoPage } from '../logado/logado';
+import { Toasted } from '../../providers/toast';
 
 
 /**
@@ -22,7 +22,7 @@ export class LoginPage {
   username : string;
   pass : string ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toast : Toasted, public login : LoginProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public login : LoginProvider, private toast : Toasted) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
@@ -31,7 +31,7 @@ export class LoginPage {
   logIn(){
     this.login.singIn(this.username, this.pass).subscribe(
       (data : any) => {
-        this.navCtrl.setRoot(HomePage)
+        this.navCtrl.setRoot(LogadoPage)
       },
       (error : any) => {
         this.toast.presentToast()

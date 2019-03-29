@@ -1,0 +1,27 @@
+<h2>Tamanhos</h2>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Tamanhos</ion-label>
+      <ion-select [(ngModel)]="tam" (ionChange)= "onChange()">
+        <ion-option  *ngFor="let tam of lisTamanhos" value={{tam.id}}>{{tam.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+<h2>Sabores</h2>
+  <ion-list >
+    
+    <ion-item *ngFor="let sab of lisSabores">
+      <ion-label>
+      {{ sab.sabor}}
+      </ion-label>
+      <ion-option item-end >
+        R$ {{ sab.preco}}
+      </ion-option>
+    </ion-item>
+     
+  </ion-list>
+  <button ion-button primary (click) = "dadosEntrega()">Dados da Entrega</button>
+
+</ion-content>

@@ -8,9 +8,6 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button primary (click)="adicionarAlunos()">Carregar Alunos</button>
-  <button ion-button primary (click)="buttonClick()">Esconder</button>
-  <button ion-button primary (click)="limparAlunos()">Limpar Alunos</button>
   <button ion-button primary (click)="showMessage()">Mostrar Mensagem</button>
   <button ion-button primary (click)="presentToast()">TOAST!</button>
 
@@ -38,9 +35,9 @@
   <div *ngIf="exibirConteudo">
   <ion-list>
       <ion-item>
-        <ion-label>Alunos</ion-label>
-        <ion-select [(ngModel)]="Alunos">
-          <ion-option  *ngFor="let aluno of listaAlunos">{{aluno.nome}}</ion-option>
+        <ion-label>Tamanhos</ion-label>
+        <ion-select [(ngModel)]="tamanho">
+          <ion-option  *ngFor="let tam of lisTamanhos">{{tam.name}}</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>
