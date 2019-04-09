@@ -18,6 +18,7 @@ import { BairrosProvider } from '../../providers/bairros';
 export class DadosEntregaPage {
   public showCidades = [];
   public cid : any;
+  public bairro : any;
   public showBairros = [];
   public exibirTexto :boolean;
 
